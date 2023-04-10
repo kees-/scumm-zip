@@ -1,0 +1,7 @@
+{:source-paths ["src"]
+ :dependencies [[reagent/reagent "1.2.0"]]
+ :dev-http {8280 "resources/public"}
+ :builds {:app {:target :browser
+                :output-dir "resources/public/_js/compiled"
+                :asset-path "_js/compiled"
+                :modules {:main {:init-fn kees.scumm-zip.main/boot}}}}}

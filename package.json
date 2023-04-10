@@ -1,0 +1,18 @@
+{
+  "name": "scumm-zip",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "ancient": "clojure -Sdeps '{:deps {com.github.liquidz/antq {:mvn/version \"RELEASE\"}}}' -m antq.core",
+    "dev": "shadow-cljs watch app",
+    "build": "shadow-cljs release app",
+    "shadow-cljs": "shadow-cljs"
+  },
+  "devDependencies": {
+    "shadow-cljs": "^2.22.9"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
