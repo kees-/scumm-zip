@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "scripts": {
     "ancient": "clojure -Sdeps '{:deps {com.github.liquidz/antq {:mvn/version \"RELEASE\"}}}' -m antq.core",
-    "dev": "shadow-cljs watch app",
+    "watch": "shadow-cljs watch app",
     "build": "shadow-cljs release app",
     "shadow-cljs": "shadow-cljs"
   },

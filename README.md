@@ -8,6 +8,9 @@ Copied from [Making an Adventure Game with Clojure - Bryce Covert](https://githu
 
 - Traverse up, down, and across a branching conversation.
 - Run arbitrary logic to advance the state of the tree, e.g unlocking or hiding conversation options.
+- Return to the top of non-branching exchanges.
+- Show different responses based on how many times an option is selected (numbered `variations`, `final`).
+- Then, I'll make events that are just side effecting fns run on navigation to, instead of running on navigation away.
 
 ## Dev
 

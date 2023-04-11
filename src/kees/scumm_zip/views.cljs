@@ -32,11 +32,12 @@
 (defn choice-button
   "One conversation option"
   [index choice atom]
-  [:li
-   [:button.choice
-    {:on-click #(d/choose index atom)
-     :class (when (:seen? choice) "seen")}
-    (:heading choice)]])
+  (when-not (:hidden? choice)
+    [:li
+     [:button.choice
+      {:on-click #(d/choose index atom)
+       :class (when (:seen? choice) "seen")}
+      (:heading choice)]]))
 
 (defn then-button
   "A button activating the `then` logic of the current node, if given."
@@ -52,10 +53,10 @@
   [choices dialogue]
   (let [indexed-choices (map-indexed vector (choices dialogue))
         then (d/then dialogue)]
-    (-> [:ul.choices]
-        (into (for [[index choice] indexed-choices]
-                [choice-button index choice dialogue]))
-        (conj (then-button then dialogue)))))
+    (reduce into [[:ul.choices]
+                  (for [[index choice] indexed-choices]
+                    [choice-button index choice dialogue])
+                  [(then-button then dialogue)]])))
 
 (defn responses
   "Speaker's most recently stated lines of conversation."
